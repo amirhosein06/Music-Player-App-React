@@ -1,8 +1,8 @@
-export default data = [
+export const data = [
     {
         src:"assets/Afshin Moghadam-Zemestoon.mp3",
         name:"Zemestoon",
         artist:"Afshin Moghadam",
-        cover:""
+        cover:"assets/cover.jpg"
     }
 ]

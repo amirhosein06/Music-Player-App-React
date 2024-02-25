@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import { data } from './data';
 
 function App() {
   function playandstop() {
@@ -14,14 +14,14 @@ function App() {
       <div className="player">
         <div className="pl_btn"><img src="icon/chevron-down-solid.svg"/>Open play list<img src="icon/ellipsis-solid.svg"/></div>
 
-        <div className="cover"><img src="..." alt="music cover" /></div>
+        <div className="cover"><span><img src={data[0].cover} alt="music cover" /></span></div>
       <audio controls autoplay>
       <source src="assets/Afshin Moghadam-Zemestoon.mp3" type="audio/mpeg"/>
       </audio>
 
       <div className="information">
-        <span className="name">mame</span>
-        <span className="artist">artist</span>
+        <div className="name">{data[0].name}</div>
+        <div className="artist">{data[0].artist}</div>
       </div>
 
       <input type="range" className="timline" value="0"/>

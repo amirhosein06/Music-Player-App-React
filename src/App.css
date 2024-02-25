@@ -23,12 +23,92 @@ audio{
   align-items: center;
 }
 .pl_btn{
-  width: 350px;
-  height: 50px;
+  width: 90%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 10% !important;
 }
+.pl_btn img{
+  width: 5.5%;
+  height: auto;
+}
+.cover{
+  height: 37%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.cover span{
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 5px #fff;
+}
+.cover span img{
+  width: 100%;
+  height: auto;
+}
+.information{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.information .name{
+  width: 100%;
+  text-align: center;
+}
+.information .artist{
+  width: 100%;
+  text-align: center;
+}
+.timline{
+   width: 87%;
+   height: 2%;
+   -webkit-appearance: none;
+   appearance: none;
+   background: transparent;
+   cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  background: #fff;
+  height: 10px;
+  border-radius: 20px;
+}
+input[type="range"]::-moz-range-track{
+  background: #fff;
+  height: 10px;
+  border-radius: 20px;
+}
+input[type="range"]::-webkit-slider-thumb{
+  background: #fff;
+  border: 3px solid #333;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -4px;
+  border-radius: 50%;
+  width: 17px ;
+  height: 17px;
+}
+.controls{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 img{
   pointer-events: none;
   width: 10px;
