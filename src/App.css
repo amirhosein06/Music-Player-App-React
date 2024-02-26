@@ -1,5 +1,12 @@
+@font-face {
+  font-family: font1;
+  src: url(font/Bellefair/Bellefair-Regular.ttf);
+}
+@font-face {
+  font-family: font2;
+  src: url(font/Barlow_Condensed/BarlowCondensed-Medium.ttf);
+}
 .App {
-  background-color: brown;
   width: 350px;
   height: 560px;
   overflow: hidden;
@@ -14,6 +21,11 @@ audio{
 .play_list{
   display: none;
 }
+img{
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+}
 
 .player{
   width: 350px;
@@ -21,36 +33,54 @@ audio{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #FEFAD4;
 }
 .pl_btn{
   width: 90%;
-  height: 10%;
+  height: 15%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 10% !important;
+  font-family: font2;
+  text-transform: uppercase;
+  color: #2D142C;
+  cursor: pointer;
 }
 .pl_btn img{
   width: 5.5%;
   height: auto;
+  filter: brightness(0) saturate(100%) invert(10%) sepia(18%) saturate(1966%) hue-rotate(253deg) brightness(95%) contrast(97%);
 }
 .cover{
-  height: 37%;
+  height: 40%;
   width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 .cover span{
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 5px #fff;
+  border: solid 7px #fff;
+  box-shadow: rgba(59, 59, 66, 0.2) 0px 7px 50px 0px;
+  position: relative;
 }
+/* .cover span::after{
+  content: "";
+  position: absolute;
+  left: calc(50% - 5px);
+  top:  calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+} */
 .cover span img{
   width: 100%;
   height: auto;
@@ -66,10 +96,20 @@ audio{
 .information .name{
   width: 100%;
   text-align: center;
+  font-family: font1;
+  font-size: 27px;
+  text-transform: uppercase;
+  font-weight: 800;
+  z-index: 1;
+  color: #ad3737;
 }
 .information .artist{
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  z-index: 3;
+  color: #2D142C;
 }
 .timline{
    width: 87%;
@@ -80,24 +120,25 @@ audio{
    cursor: pointer;
 }
 input[type="range"]::-webkit-slider-runnable-track{
-  background: #fff;
-  height: 10px;
+  background: #ad3737;
+  height: 3px;
   border-radius: 20px;
 }
 input[type="range"]::-moz-range-track{
-  background: #fff;
-  height: 10px;
+  background: #ad3737;
+  height: 3px;
   border-radius: 20px;
 }
 input[type="range"]::-webkit-slider-thumb{
-  background: #fff;
-  border: 3px solid #333;
+  background: #ad3737;
+  border: 3px solid #fff;
   -webkit-appearance: none;
   appearance: none;
-  margin-top: -4px;
+  margin-top: -6px;
   border-radius: 50%;
-  width: 17px ;
-  height: 17px;
+  width: 16px ;
+  height: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .controls{
   height: 30%;
@@ -106,11 +147,48 @@ input[type="range"]::-webkit-slider-thumb{
   align-items: center;
   justify-content: center;
 }
-
-
-
-img{
+.playbtn{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ad3737;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(59, 59, 66, 0.2) 0px 7px 50px 0px;
+  margin: 20px;
+  cursor: pointer;
+}
+.playbtn img{
   pointer-events: none;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: auto;
+  margin-left: 24px;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(9%) saturate(7436%) hue-rotate(223deg) brightness(121%) contrast(91%);
+}
+.bacbtn ,.nextbtn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 15%;
+}
+.nextbtn{
+  margin-right: 15%;
+  margin-left: 0;
+}
+.bacbtn img,.nextbtn img{
+  width: 20px;
+  height: auto;
+  box-shadow: rgba(59, 59, 66, 0.2) 0px 7px 50px 0px;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(54%) saturate(1329%) hue-rotate(325deg) brightness(108%) contrast(94%);
+}
+.randombtn,.starbtn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.randombtn img,.starbtn img{
+  width: 14px;
+  height: auto;
+  box-shadow: rgba(59, 59, 66, 0.2) 0px 7px 50px 0px;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(54%) saturate(1329%) hue-rotate(325deg) brightness(108%) contrast(94%);
 }
