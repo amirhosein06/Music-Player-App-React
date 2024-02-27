@@ -34,6 +34,7 @@ function App() {
     const audiotag = document.querySelectorAll("audio");
     const playbtn = document.querySelectorAll(".playbtn img");
     const cover = document.querySelectorAll(".cover span");
+
     if (index === "0") {
       playbtn[0].src = "icon/pause-solid.svg";
       audiotag[0].play();
@@ -76,19 +77,21 @@ function App() {
   }
   function nextandis() {
     if (dataandis < data.length-1) {
-      setdataandis(dataandis++);
+      setdataandis(dataandis +1);
+      if (index === "0") {
+        playandstop();
+      }
     }
-    playandstop();
   }
   function bacandi() {
     if (dataandis > 0) {
-      setdataandis(dataandis--);
-    }
-    const audiotag = document.querySelectorAll("audio");
-    audiotag[0].currentTime = 0;
-    setinputval(0);
-    if (index === "0") {
-      playandstop();
+      setdataandis(dataandis -1);
+      const audiotag = document.querySelectorAll("audio");
+      audiotag[0].currentTime = 0;
+      setinputval(0);
+      if (index === "0") {
+        playandstop();
+      }
     }
   }
   function randomandis() {
