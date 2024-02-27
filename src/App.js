@@ -34,7 +34,7 @@ function App() {
     const audiotag = document.querySelectorAll("audio");
     const playbtn = document.querySelectorAll(".playbtn img");
     const cover = document.querySelectorAll(".cover span");
-
+    audiotag[0].load();
     if (index === "0") {
       playbtn[0].src = "icon/pause-solid.svg";
       audiotag[0].play();
